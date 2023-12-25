@@ -1,0 +1,12 @@
+diff -ruN klogg-22.06/src/app/CMakeLists.txt klogg-22.06.patched/src/app/CMakeLists.txt
+--- klogg-22.06/src/app/CMakeLists.txt	2022-06-15 05:21:49.000000000 +0700
++++ klogg-22.06.patched/src/app/CMakeLists.txt	2023-12-26 06:24:00.006078431 +0700
+@@ -34,7 +34,7 @@
+ if(KLOGG_OVERRIDE_MALLOC)
+   list(PREPEND MAIN_LIBS klogg_malloc_proxy)
+   if(KLOGG_USE_MIMALLOC AND NOT WIN32)
+-    list(PREPEND MAIN_SOURCES $<TARGET_OBJECTS:mimalloc-obj>)
++    list(PREPEND MAIN_LIBS mimalloc)
+   endif()
+ endif()
+ 
